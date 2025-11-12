@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Touch - Ev Yapımı Mutluluk</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1 class="logo">Sweet Touch</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#products">Ürünler</a></li>
+                <li><a href="#about">Hakkımızda</a></li>
+                <li><a href="#order">Sipariş</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Sweet Touch</h1>
+            <p class="hero-subtitle">Ev Yapımı Mutluluğa Dokunun</p>
+            <p class="hero-description">Her ısırıkta, en kaliteli malzemelerle hazırlanmış, sevgiyle yapılmış bir mutluluk...</p>
+            <button class="cta-button" onclick="scrollToSection('products')">Hemen Sipariş Ver</button>
+        </div>
+        <div class="hero-image">
+            <div class="cake-placeholder">
+                <i class="fas fa-birthday-cake"></i>
+                <p>Enfes Pastalarınız Burada!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Lezzetli Seçeneklerimiz</h2>
+            <div class="categories">
+                <button class="category-btn active" data-category="all">Tümü</button>
+                <button class="category-btn" data-category="pasta">Pastalar</button>
+                <button class="category-btn" data-category="cupcake">Cupcakeler</button>
+                <button class="category-btn" data-category="cookies">Kurabiyeler</button>
+                <button class="category-btn" data-category="cheesecake">Cheesecake'ler</button>
+            </div>
+            <div class="products-grid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Hikayemiz</h2>
+                    <p>Merhaba, ben Ayşe! Pastacılık tutkum 10 yıl önce annemin mutfağında başladı. Profesyonel olarak 5 yıldır pastane şefiyim ve şimdi bu tutkumu sizlerle paylaşmanın zamanı geldi.</p>
+                    <p>Sweet Touch'ta her pasta, özel gününüzü unutulmaz kılmak için titizlikle hazırlanır. En taze malzemeleri kullanır, her detayda mükemmelliği ararız.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Taze Malzemeler</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <span>El Yapımı</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Hızlı Teslimat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="chef-placeholder">
+                        <i class="fas fa-user-chef"></i>
+                        <p>Pastane Şefi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order">
+        <div class="container">
+            <h2 class="section-title">Sipariş Verin</h2>
+            <div class="order-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Ürün Seçin</h3>
+                    <p>Favori pastanızı seçin</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Kişiselleştirin</h3>
+                    <p>Özelleştirme seçenekleri</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Teslimat</h3>
+                    <p>Adresinize gelsin</p>
+                </div>
+            </div>
+            <div class="order-form">
+                <h3>Hızlı Sipariş Formu</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="product">Ürün Seçin:</label>
+                        <select id="product" name="product" required>
+                            <option value="">Bir ürün seçin...</option>
+                            <option value="cilekli-pasta">Çilekli Pasta - ₺180</option>
+                            <option value="cikolatali-pasta">Çikolatalı Pasta - ₺200</option>
+                            <option value="red-velvet">Red Velvet - ₺220</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryType">Teslimat Türü:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="deliveryType" value="delivery" required>
+                                <span>Adrese Teslim (+₺30)</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="deliveryType" value="pickup">
+                                <span>Elden Teslim (Ücretsiz)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryDate">Teslimat Tarihi:</label>
+                        <input type="date" id="deliveryDate" name="deliveryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Özel Notlar:</label>
+                        <textarea id="notes" name="notes" placeholder="Doğum günü mesajı, özel istekler..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Siparişi Tamamla</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+90 555 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h3>Instagram</h3>
+                            <p>@sweettouch</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>E-posta</h3>
+                            <p>info@sweettouch.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Adres</h3>
+                            <p>Örnek Mah. Tatlı Cad. No:123<br>İstanbul</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Mesaj Gönderin</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Adınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="E-posta" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mesajınız..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sweet Touch</h3>
+                    <p>Ev yapımı mutluluğu herkese ulaştırıyoruz.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#products">Ürünler</a></li>
+                        <li><a href="#about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>📞 +90 555 123 4567</p>
+                    <p>📧 info@sweettouch.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sweet Touch. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
